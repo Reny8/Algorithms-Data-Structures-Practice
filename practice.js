@@ -21,4 +21,10 @@ function firstAndLast(array) {
   console.log(array[0]);
   console.log(array[array.length - 1]);
 }
-firstAndLast(posts);
+// firstAndLast(posts);
+
+// Given 2 arrays, create a function that let's a user know whether these two arrays contain any common items
+// arrays with no size limit
+function commonItem(firstArray, secondArray) {
+// Set up
+    }
