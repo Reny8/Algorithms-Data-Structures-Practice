@@ -29,20 +29,6 @@ function firstAndLast(array) {
 const letters1 = ["a", "b", "c", "x"];
 const letters2 = ["z", "y", "a"];
 function commonItem(firstArray, secondArray) {
-  let object = {};
-  // loop through first array and create object where properities === items
-  for (let index = 0; index < firstArray.length; index++) {
-    if (!object[firstArray[index]]) {
-      const item = firstArray[index];
-      object[item] = true;
-    }
-  }
-  // loop through second array and check if item in second array exists on obj
-  for (let index = 0; index < secondArray.length; index++) {
-    if (object[secondArray[index]]) {
-      return true;
-    }
-  }
-return false
+return firstArray.some(item => secondArray.includes(item))
 }
 console.log(commonItem(letters1, letters2));
