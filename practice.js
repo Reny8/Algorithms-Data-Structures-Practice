@@ -23,12 +23,25 @@ function firstAndLast(array) {
 }
 // firstAndLast(posts);
 
-
 // Given 2 arrays, create a function that let's a user know whether these two arrays contain any common items
 // arrays with no size limit
 const letters1 = ["a", "b", "c", "x"];
 const letters2 = ["z", "y", "a"];
 function commonItem(firstArray, secondArray) {
-return firstArray.some(item => secondArray.includes(item))
+  return firstArray.some((item) => secondArray.includes(item));
 }
-console.log(commonItem(letters1, letters2));
+// console.log(commonItem(letters1, letters2));
+
+function hasPairWithSum(array, sum) {
+  const mySet = new Set();
+  for (let index = 0; index < array.length; index++) {
+    if (mySet.has(array[index])) {
+      return true;
+    }
+    mySet.add(sum - array[index]);
+  }
+  return false;
+}
+const numbers = [1,2,3,6,8] 
+let sum = 10
+hasPairWithSum(numbers, sum)
