@@ -13,13 +13,10 @@ def first_and_last(list):
 letters_1 = ["a", "b", "c", "x"]
 letters_2 = ["z", "y", "f"]
 def common_items(first_list, second_list):
-    new_object = {}
-    for item in range(0, len(first_list)):
-        if first_list[item] not in new_object:
-            new_item = first_list[item]
-            new_object[new_item] = True
-    for item in range(0, len(second_list)):
-        if second_list[item] in new_object:
+   for item in first_list:
+        if item in second_list:
             return True
-    return False
+        return False
+
 print(common_items(letters_1, letters_2))
+
