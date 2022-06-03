@@ -12,5 +12,8 @@ function logAllPairsOfArray(array) {
 
 // Fins 1st tweet, Find last tweet
 const posts = ['hello, Just signed up!', 'Just watched a movie', 'Will be watching the new show tonight']
-console.log(posts[0])
-console.log(posts[posts.length-1])
+function firstAndLast(array) {
+    console.log(posts[posts.length-1])
+    console.log(posts[0])
+}
+firstAndLast(posts)
