@@ -32,13 +32,13 @@ function commonItem(firstArray, secondArray) {
 }
 // console.log(commonItem(letters1, letters2));
 
-function hasPairWithSum(array, sum) {
+function hasPairWithSum(arrayOfNumbers, sum) {
   const mySet = new Set();
-  for (let index = 0; index < array.length; index++) {
-    if (mySet.has(array[index])) {
+  for (let index = 0; index < arrayOfNumbers.length; index++) {
+    if (mySet.has(arrayOfNumbers[index])) {
       return true;
     }
-    mySet.add(sum - array[index]);
+    mySet.add(sum - arrayOfNumbers[index]);
   }
   return false;
 }
