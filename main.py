@@ -18,5 +18,15 @@ def common_items(first_list, second_list):
             return True
         return False
 
-print(common_items(letters_1, letters_2))
+# print(common_items(letters_1, letters_2))
+
+def pair_equals_sum(list_of_numbers, total): 
+    new_list = []
+    for x in list_of_numbers:
+        if x in new_list:
+            return True
+        new_list.append(total - x)
+    return False
+
+print(pair_equals_sum([1,2,3,4,5,6], 10))
 

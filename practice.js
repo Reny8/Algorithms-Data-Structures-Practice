@@ -42,6 +42,5 @@ function hasPairWithSum(array, sum) {
   }
   return false;
 }
-const numbers = [1,2,3,6,8] 
-let sum = 10
-hasPairWithSum(numbers, sum)
+
+console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
