@@ -28,5 +28,37 @@ def pair_equals_sum(list_of_numbers, total):
         new_list.append(total - x)
     return False
 
-print(pair_equals_sum([1,2,3,4,5,6], 10))
+# print(pair_equals_sum([1,2,3,4,5,6], 10))
+
+# Find the index of a value in a sorted array. 
+list_of_numbers= [3,5,4,2,6,7,8]
+list_of_numbers.sort()
+
+def find_index_for_number(list, number):
+    if number in list:
+        return list.index(number)
+    elif number not in list:
+        list.append(number)
+        return list.index(number)
+    
+# print(find_index_for_number(list_of_numbers, 5))
+# print(find_index_for_number(list_of_numbers, 9))
+
+# Finding repeating letters in a string
+def repeating_characters(string_to_check):
+    string_to_array = []
+    count = 1
+    for item in string_to_check:
+        if item in string_to_array:
+           count += 1
+        string_to_array.append(item)
+    if count != 1:
+        return f"A letter was repeated {count} times"
+    return "No letters were repeated"
+    
+repeats = repeating_characters("running")
+print(repeats)
+
+
+
 
