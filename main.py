@@ -29,7 +29,7 @@ def pair_equals_sum(list_of_numbers, total):
     return False
 
 # print(pair_equals_sum([1,2,3,4,5,6], 10))
-
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Find the index of a value in a sorted array. 
 list_of_numbers= [3,5,4,2,6,7,8]
 list_of_numbers.sort()
@@ -63,20 +63,18 @@ def repeating_characters(string_to_check):
 #  password length must be greater than 8
 # password must have at least these special character only (-,+,=,{,[,\)
 # password must have at least capital letter, excluding the first and last location
+
 def validate_password():
-    entered_pass = input("Enter a password greater than 8, with at least one of these symbols (-,+.=,{,[,\)\n")
-    while True:
-        for item in entered_pass:
-            if item in ["-","+","=","{","["] and len(entered_pass) >= 8:
-                return True    
-        entered_pass = input("Try again\n")
-
-
-       
-
-            
-    
-
+    valid_length_and_symbol = False # O(1)
+    valid_cap = False # O(1)
+    while valid_length_and_symbol == False or valid_cap == False:
+        entered_pass = input("Enter a password greater than 8, with at least one of these symbols (-,+.=,{,[) and must have a capital excluding first and last\n") 
+        for item in entered_pass: #O(n)
+            if item in ["-","+","=","{","["]  and len(entered_pass) >= 8:
+                valid_length_and_symbol = True
+            if item.upper() in entered_pass[1:-1]:
+                valid_cap = True
+    return print("Password Saved Successfully")
 
 validate_password()
 
