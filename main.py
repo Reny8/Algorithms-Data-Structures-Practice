@@ -56,8 +56,29 @@ def repeating_characters(string_to_check):
         return f"A letter was repeated {count} times"
     return "No letters were repeated"
     
-repeats = repeating_characters("running")
-print(repeats)
+# repeats = repeating_characters("running")
+# print(repeats)
+
+#  write a program that is going to validate password hased on following rules
+#  password length must be greater than 8
+# password must have at least these special character only (-,+,=,{,[,\)
+# password must have at least capital letter, excluding the first and last location
+def validate_password():
+    entered_pass = input("Enter a password greater than 8, with at least one of these symbols (-,+.=,{,[,\)\n")
+    while True:
+        for item in entered_pass:
+            if item in ["-","+","=","{","["] and len(entered_pass) >= 8:
+                return True    
+        entered_pass = input("Try again\n")
+
+
+       
+
+            
+    
+
+
+validate_password()
 
 
 

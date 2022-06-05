@@ -43,4 +43,4 @@ function hasPairWithSum(arrayOfNumbers, sum) {
   return false;
 }
 
-console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
+// console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
