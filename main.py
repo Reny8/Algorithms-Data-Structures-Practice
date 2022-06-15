@@ -76,21 +76,22 @@ def validate_password():
                 valid_cap = True
     return print("Password Saved Successfully")
 
-validate_password()
+# validate_password()
 
 
 
 # makes string of numbers into a phone number
 def string_to_cell(numbers):
-    area = ''
+    area_code = ''
     middle = ''
     last_four = ''
-    for num in numbers [0:3]:
-        area += num
-    for num in numbers [3:6]:
-        middle += num
-    for num in numbers [6:10]:
-        last_four+=num
-    print(f'({area}) {middle} -  {last_four}')
+    if len(numbers) == 10:
+        for num in numbers [0:3]:
+            area_code += num
+        for num in numbers [3:6]:
+            middle += num
+        for num in numbers [6:10]:
+            last_four += num
+    print(f'({area_code}) {middle} - {last_four}')
 
 string_to_cell("1234567890")
