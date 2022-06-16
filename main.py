@@ -94,5 +94,12 @@ def string_to_cell(numbers):
             last_four += num
     print(f'({area_code}) {middle} - {last_four}')
 
-string_to_cell("1234567890")
+# string_to_cell("1234567890")
 
+# MERGING ARRAYS FUNCTION
+def merge_arrays(first_array, second_array):
+    for item in second_array:
+        first_array.append(item)
+    first_array.sort()
+    print(first_array)
+merge_arrays([0,1,2,3,4], [16,23,30])

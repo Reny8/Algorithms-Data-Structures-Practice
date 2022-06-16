@@ -46,7 +46,7 @@ function hasPairWithSum(arrayOfNumbers, sum) {
 // console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
 
 function reverseString(string) {
-  let reversed = "";
+  let reversed = ""
   for (let index = string.length - 1; index >= 0; index--) {
     reversed += string[index];
   }
