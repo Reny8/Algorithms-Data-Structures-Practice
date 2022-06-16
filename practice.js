@@ -44,3 +44,21 @@ function hasPairWithSum(arrayOfNumbers, sum) {
 }
 
 // console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
+
+function reverseString(string) {
+  let reversed = "";
+  for (let index = string.length - 1; index >= 0; index--) {
+    reversed += string[index];
+  }
+  console.log(reversed);
+}
+// reverseString("Hello I am Reny")
+
+// MOST EFFICIENT WAY TO REVERSE A STRING IN JS
+function reverseString2(string) {
+  let reversed = string.split('').reduce(function(element, index){
+      return index += element
+  })
+  console.log(reversed);
+}
+reverseString2("helloworld")
