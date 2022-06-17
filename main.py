@@ -137,19 +137,23 @@ def maximum_subarray(nums):
 
 # Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 # Note that you must do this in-place without making a copy of the array.
-# Example 1:
-# Input: nums = [0,1,0,3,12]
-# Output: [1,3,12,0,0]
-
-# Example 2:
-# Input: nums = [0]
-# Output: [0]
 def move_zeroes(nums):
     for num in nums:
         if num == 0:
             nums.remove(num)
             nums.append(num)
     return nums
+# numbers = [0,1,0,3,12]
+# move_zeroes(numbers)
 
-numbers = [0,1,0,3,12]
-move_zeroes(numbers)
+# Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+# TESTED ON LEETCODE NEED TO FIND A MORE EFFICIENT WAY
+def repeating_numbers(nums):
+    repeats = []
+    for num in nums:
+        if num not in repeats:
+          repeats.append(num)
+        else:
+            return True
+    return False
+print(repeating_numbers([1,2,3,3]))
