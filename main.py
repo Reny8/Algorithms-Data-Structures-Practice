@@ -107,10 +107,6 @@ def merge_arrays(first_array, second_array):
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 # You can return the answer in any order.
-# Example 1:
-# Input: nums = [2,7,11,15], target = 9
-# Output: [0,1]
-# Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]
 def target_sum(numbers_array, target):
     index_sums = []
     for number in numbers_array:
@@ -120,5 +116,40 @@ def target_sum(numbers_array, target):
             break     
     return index_sums
 
-sum_list = target_sum([2,7,11,15], 9)
-print(sum_list)
+# sum_list = target_sum([2,7,11,15], 9)
+# print(sum_list)
+
+# Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+# A subarray is a contiguous part of an array.
+# Example 1:
+# Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+# Output: 6
+# Explanation: [4,-1,2,1] has the largest sum = 6.
+
+# Example 2:
+# Input: nums = [1]
+# Output: 1
+# Example 3:
+# Input: nums = [5,4,-1,7,8]
+# Output: 23
+def maximum_subarray(nums):
+    pass
+
+# Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+# Note that you must do this in-place without making a copy of the array.
+# Example 1:
+# Input: nums = [0,1,0,3,12]
+# Output: [1,3,12,0,0]
+
+# Example 2:
+# Input: nums = [0]
+# Output: [0]
+def move_zeroes(nums):
+    for num in nums:
+        if num == 0:
+            nums.remove(num)
+            nums.append(num)
+    return nums
+
+numbers = [0,1,0,3,12]
+move_zeroes(numbers)
