@@ -159,11 +159,10 @@ def repeating_numbers(nums):
 # print(repeating_numbers([1,2,3,3]))
 
 # Given an array, rotate the array to the right by k steps, where k is non-negative.
-# TESTED IN LEETCODE NEED TO MAKE A MORE EFFICIENT METHOD
-def rotate_array(nums, rotation):
-    for amount in range(0,rotation):
-        moved = nums.pop(len(nums)-1)
-        nums.insert(0, moved)
-    return nums
+def rotate_array(nums, k):
+    for amount in range(0,k):
+        moved = nums.pop(-1)
+        nums.insert(0,moved)
+    print(nums)
 rotate_array([1,2,3,4,5,6,7],3)
     
