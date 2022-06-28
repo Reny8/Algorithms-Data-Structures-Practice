@@ -64,6 +64,12 @@ function reverseString2(string) {
 // reverseString2("helloworld")
 
 //HASH TABLE PRACTICE 
+class HashTable {
+  constructor(size) {
+    this.data = new Array(size)
+  }
+  
+}
 let user = {
   age: 54,
   name: 'Kylie',
