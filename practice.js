@@ -61,4 +61,21 @@ function reverseString2(string) {
   })
   console.log(reversed);
 }
-reverseString2("helloworld")
+// reverseString2("helloworld")
+
+//HASH TABLE PRACTICE 
+let user = {
+  age: 54,
+  name: 'Kylie',
+  magic: true,
+  scream: function() {
+    console.log('ahhhhh!')
+  }
+}
+//SEARCH 
+console.log(user.age)
+//ADDING
+user.spell = 'abra kadabra'
+console.log(user)
+// ACCESSING IN MEMORY
+user.scream()
