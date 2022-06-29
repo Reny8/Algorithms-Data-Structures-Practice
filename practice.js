@@ -46,7 +46,7 @@ function hasPairWithSum(arrayOfNumbers, sum) {
 // console.log(hasPairWithSum([1, 2, 3, 6, 8], 10));
 
 function reverseString(string) {
-  let reversed = ""
+  let reversed = "";
   for (let index = string.length - 1; index >= 0; index--) {
     reversed += string[index];
   }
@@ -56,32 +56,40 @@ function reverseString(string) {
 
 // MOST EFFICIENT WAY TO REVERSE A STRING IN JS
 function reverseString2(string) {
-  let reversed = string.split('').reduce(function(element, index){
-      return index += element
-  })
+  let reversed = string.split("").reduce(function (element, index) {
+    return (index += element);
+  });
   console.log(reversed);
 }
 // reverseString2("helloworld")
 
-//HASH TABLE PRACTICE 
+//HASH TABLE PRACTICE
 class HashTable {
+  // amount of shelves in memory
   constructor(size) {
-    this.data = new Array(size)
+    this.data = new Array(size);
   }
-  
+  // function to create a small hash table
+  _hash(key) {
+    let hash = 0;
+    for (let index = 0; index < key.length; index++) {
+      hash = (hash + key.charCodeAt(index) * index) % this.data.length;
+    }
+    return hash;
+  }
 }
 let user = {
   age: 54,
-  name: 'Kylie',
+  name: "Kylie",
   magic: true,
-  scream: function() {
-    console.log('ahhhhh!')
-  }
-}
-//SEARCH 
-console.log(user.age)
+  scream: function () {
+    console.log("ahhhhh!");
+  },
+};
+//SEARCH
+console.log(user.age);
 //ADDING
-user.spell = 'abra kadabra'
-console.log(user)
+user.spell = "abra kadabra";
+console.log(user);
 // ACCESSING IN MEMORY
-user.scream()
+user.scream();
