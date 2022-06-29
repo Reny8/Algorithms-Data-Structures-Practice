@@ -73,11 +73,23 @@ class HashTable {
   _hash(key) {
     let hash = 0;
     for (let index = 0; index < key.length; index++) {
+      // charCodeAt gives an integer between 0 to 65535 representing the UTF-16 code 
       hash = (hash + key.charCodeAt(index) * index) % this.data.length;
     }
     return hash;
   }
+  set(key, value) {
+    let address = this._hash(key)
+    this.data[key] = value
+    console.log(address)
+  }
+
 }
+
+const table = new HashTable(50)
+table.set('grapes', 10000)
+// table.get('grapes')
+// OBJECT SEARCHING AND ADDING
 let user = {
   age: 54,
   name: "Kylie",
@@ -87,9 +99,9 @@ let user = {
   },
 };
 //SEARCH
-console.log(user.age);
+// console.log(user.age);
 //ADDING
-user.spell = "abra kadabra";
-console.log(user);
+// user.spell = "abra kadabra";
+// console.log(user);
 // ACCESSING IN MEMORY
-user.scream();
+// user.scream();
