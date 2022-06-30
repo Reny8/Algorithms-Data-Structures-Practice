@@ -1,6 +1,8 @@
 # Collect the first and last post
 # Space Complexity example working with different factors
 # lists, function
+
+
 posts = ['hello, Just signed up!', 'Just watched a movie', 'Will be watching the new show tonight']
 def first_and_last(list):
     print(list[1])
@@ -164,5 +166,18 @@ def rotate_array(nums, k):
         moved = nums.pop(-1)
         nums.insert(0,moved)
     print(nums)
-rotate_array([1,2,3,4,5,6,7],3)
+# rotate_array([1,2,3,4,5,6,7],3)
     
+def recurringNumber(array):
+    hash_table = {}
+    for num in array:
+        try:
+            if hash_table[num] != None:
+                return num
+        except KeyError:
+            hash_table[num] = True
+
+recurringNumber([2,1,5,3,2,1])
+repeat = recurringNumber([1,2,3,4])
+print(repeat)
+

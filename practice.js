@@ -130,10 +130,8 @@ function recurringNumber(array) {
     }
     hash[array[i]] = true;
   }
-  if (!hash) {
-    return undefined;
-  }
 }
+
 console.log(recurringNumber([2, 5, 1, 2, 3, 5, 1, 2, 4]));
 console.log(recurringNumber([2, 1, 1, 2, 3, 5, 1, 2, 4]));
 console.log(recurringNumber([2, 3, 4, 5]));
