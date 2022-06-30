@@ -72,9 +72,9 @@ class HashTable {
   // function to create a small hash table
   _hash(key) {
     let hash = 0;
-    for (let index = 0; index < key.length; index++) {
+    for (let i = 0; i < key.length; i++) {
       // charCodeAt gives an integer between 0 to 65535 representing the UTF-16 code
-      hash = (hash + key.charCodeAt(index) * index) % this.data.length;
+      hash = (hash + key.charCodeAt(i) * i) % this.data.length;
     }
     return hash;
   }
@@ -91,20 +91,31 @@ class HashTable {
     let address = this._hash(key);
     let currentBucket = this.data[address];
     if (currentBucket) {
-      for (let index = 0; index < currentBucket.length; index++) {
-        if (currentBucket[index][0] === key) {
-          return currentBucket[index][1];
+      for (let i = 0; i < currentBucket.length; i++) {
+        if (currentBucket[i][0] === key) {
+          return currentBucket[i][1];
         }
       }
       return undefined;
     }
+  }
+  keys() {
+    const keysArray = [];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i]) {
+        keysArray.push(this.data[i][0][0]);
+      }
+    }
+    return keysArray;
   }
 }
 
 const table = new HashTable(50);
 table.set("grapes", 10000);
 table.set("apples", 54);
-console.log(table.get("grapes"));
+table.set("oranges", 2);
+table.get("grapes");
+console.log(table.keys());
 // OBJECT SEARCHING AND ADDING
 let user = {
   age: 54,
