@@ -125,7 +125,7 @@ class HashTable {
 function recurringNumber(array) {
   let hash = {}
   for (let i = 0; i < array.length; i++) {
-    if (hash[array[i]]) {
+    if (hash[array[i]] !== undefined) {
       return array[i];
     }
     hash[array[i]] = true;
