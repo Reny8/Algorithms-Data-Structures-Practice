@@ -73,26 +73,38 @@ class HashTable {
   _hash(key) {
     let hash = 0;
     for (let index = 0; index < key.length; index++) {
-      // charCodeAt gives an integer between 0 to 65535 representing the UTF-16 code 
+      // charCodeAt gives an integer between 0 to 65535 representing the UTF-16 code
       hash = (hash + key.charCodeAt(index) * index) % this.data.length;
     }
     return hash;
   }
   set(key, value) {
-    let address = this._hash(key)
-    if (!this.data[address]){
+    let address = this._hash(key);
+    if (!this.data[address]) {
       this.data[address] = [];
-      this.data[address].push([key,value])
+      this.data[address].push([key, value]);
     }
-    this.data[address].push([key,value])
-    return this.data
+    this.data[address].push([key, value]);
+    return this.data;
+  }
+  get(key) {
+    let address = this._hash(key);
+    let currentBucket = this.data[address];
+    if (currentBucket) {
+      for (let index = 0; index < currentBucket.length; index++) {
+        if (currentBucket[index][0] === key) {
+          return currentBucket[index][1];
+        }
+      }
+      return undefined;
     }
-
+  }
 }
 
-const table = new HashTable(50)
-table.set('grapes', 10000)
-// table.get('grapes')
+const table = new HashTable(50);
+table.set("grapes", 10000);
+table.set("apples", 54);
+console.log(table.get("grapes"));
 // OBJECT SEARCHING AND ADDING
 let user = {
   age: 54,
