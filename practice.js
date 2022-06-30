@@ -110,25 +110,30 @@ class HashTable {
   }
 }
 
-const table = new HashTable(50);
-table.set("grapes", 10000);
-table.set("apples", 54);
-table.set("oranges", 2);
-table.get("grapes");
-console.log(table.keys());
-// OBJECT SEARCHING AND ADDING
-let user = {
-  age: 54,
-  name: "Kylie",
-  magic: true,
-  scream: function () {
-    console.log("ahhhhh!");
-  },
-};
-//SEARCH
-// console.log(user.age);
-//ADDING
-// user.spell = "abra kadabra";
-// console.log(user);
-// ACCESSING IN MEMORY
-// user.scream();
+// const table = new HashTable(50);
+// table.set("grapes", 10000);
+// table.set("apples", 54);
+// table.set("oranges", 2);
+// table.get("grapes");
+// console.log(table.keys());
+
+// PRACTICE PROBLEM WITH HASH TABLE SOLUTION
+// FIRST RECURRING NUMBER IN THE ARRAY
+// GIVEN AN ARRAY = [2,5,1,2,3,5,1,2,4] SHOULD RETURN 2
+// GIVEN AN ARRAY = [2,1,1,2,3,5,1,2,4] SHOULD RETURN 1
+// GIVEN AN ARRAY = [2,3,4,5] SHOULD RETURN UNDEFINED
+function recurringNumber(array) {
+  let hash = {}
+  for (let i = 0; i < array.length; i++) {
+    if (hash[array[i]]) {
+      return array[i];
+    }
+    hash[array[i]] = true;
+  }
+  if (!hash) {
+    return undefined;
+  }
+}
+console.log(recurringNumber([2, 5, 1, 2, 3, 5, 1, 2, 4]));
+console.log(recurringNumber([2, 1, 1, 2, 3, 5, 1, 2, 4]));
+console.log(recurringNumber([2, 3, 4, 5]));
