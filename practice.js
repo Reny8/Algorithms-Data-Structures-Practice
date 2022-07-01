@@ -119,11 +119,8 @@ class HashTable {
 
 // PRACTICE PROBLEM WITH HASH TABLE SOLUTION
 // FIRST RECURRING NUMBER IN THE ARRAY
-// GIVEN AN ARRAY = [2,5,1,2,3,5,1,2,4] SHOULD RETURN 2
-// GIVEN AN ARRAY = [2,1,1,2,3,5,1,2,4] SHOULD RETURN 1
-// GIVEN AN ARRAY = [2,3,4,5] SHOULD RETURN UNDEFINED
 function recurringNumber(array) {
-  let hash = {}
+  let hash = {};
   for (let i = 0; i < array.length; i++) {
     if (hash[array[i]] !== undefined) {
       return array[i];
@@ -131,7 +128,44 @@ function recurringNumber(array) {
     hash[array[i]] = true;
   }
 }
+// console.log(recurringNumber([2, 5, 1, 2, 3, 5, 1, 2, 4]));
 
-console.log(recurringNumber([2, 5, 1, 2, 3, 5, 1, 2, 4]));
-console.log(recurringNumber([2, 1, 1, 2, 3, 5, 1, 2, 4]));
-console.log(recurringNumber([2, 3, 4, 5]));
+// BUILDING A LINK LIST 10 --> 5 --> 16
+// let myLinkedList = {
+//   head: {
+//     value: 10,
+//     next: {
+//       value: 5,
+//       next: {
+//         value: 16,
+//         next: null,
+//       },
+//     },
+//   },
+// };
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null,
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+    const newNode = {
+      value: value,
+      next: null,
+    };
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this
+  }
+}
+
+const myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);
+console.log(myLinkedList);
