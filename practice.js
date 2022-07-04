@@ -173,9 +173,22 @@ class LinkedList {
     this.length++;
     console.log(this);
   }
+  insert(index, value) {
+    // find index
+    // insert the new value in the found index position
+  }
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 const myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1);
+// myLinkedList.append(5);
+// myLinkedList.append(16);
+// myLinkedList.prepend(1);
+myLinkedList.insert(2, 99);
