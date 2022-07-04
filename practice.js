@@ -146,7 +146,7 @@ function recurringNumber(array) {
 class Node {
   constructor(value) {
     this.value = value;
-    this.next = null
+    this.next = null;
   }
 }
 class LinkedList {
@@ -159,20 +159,14 @@ class LinkedList {
     this.length = 1;
   }
   append(value) {
-    const newNode = {
-      value: value,
-      next: null,
-    };
+    let newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
     console.log(this);
   }
   prepend(value) {
-    const newNode = {
-      value: value,
-      next: null,
-    };
+    let newNode = new Node(value);
     // pointer to the head first item in the list
     newNode.next = this.head;
     this.head = newNode;
@@ -184,4 +178,4 @@ class LinkedList {
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
-myLinkedList.prepend(1)
+myLinkedList.prepend(1);
