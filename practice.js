@@ -163,7 +163,7 @@ class LinkedList {
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
-    console.log(this);
+    return this;
   }
   prepend(value) {
     let newNode = new Node(value);
@@ -171,11 +171,27 @@ class LinkedList {
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
-    console.log(this);
+    return this;
   }
   insert(index, value) {
-    // find index
-    // insert the new value in the found index position
+    if (index >= this.length || index === this.length - 1) {
+      this.append(value);
+      return this.printList();
+    } else if (index === 0) {
+      this.prepend(value);
+      return this.printList();
+    }
+    let newNode = new Node(value)
+    const leader = this.traverseToIndex(index -1)
+    }
+
+  traverseToIndex(index) {
+    let counter = 0
+    let currentNode = this.head
+    while (counter !== index) {
+      currentNode = currentNode.next
+      counter++
+    }
   }
   printList() {
     const array = [];
@@ -184,11 +200,12 @@ class LinkedList {
       array.push(currentNode.value);
       currentNode = currentNode.next;
     }
+    console.log(array);
   }
 }
 
 const myLinkedList = new LinkedList(10);
-// myLinkedList.append(5);
-// myLinkedList.append(16);
-// myLinkedList.prepend(1);
-myLinkedList.insert(2, 99);
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.prepend(1);
+myLinkedList.insert(2,99);
