@@ -93,6 +93,7 @@ class LinkedList {
     this.tail = this.head
     // storing the second value
     let second = first.next
+    // as long there is a second value to continue reversing
     while (second) {
       const temp = second.next
       second.next = first
