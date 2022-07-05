@@ -30,13 +30,21 @@ class Stack {
     this.length++;
     console.log(this);
   }
-  pop() {}
+  pop() {
+    if (!this.top) {
+        return null
+    }
+    const pointer = this.top
+    this.top = this.top.next
+    this.length--
+    return this
+  }
 }
 const myStack = new Stack();
 myStack.push('Google')
 myStack.push('Udemy')
 myStack.push("Discord");
-// myStack.pop()
+console.log(myStack.pop())
 
 //Queues
 // FIFO
