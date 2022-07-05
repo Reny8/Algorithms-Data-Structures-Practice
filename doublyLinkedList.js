@@ -31,6 +31,30 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+  insert(index, value) {
+    if (index >= this.length || index === this.length - 1) {
+      return this.append(value);
+    } else if (index === 0) {
+      return this.prepend(value);
+    }
+    let newNode = new DoublyNode(value)
+    const leader = this.traverseToIndex(index -1 )
+    const follower = leader.next
+    leader.next = newNode
+    newNode.prev = leader
+    newNode.next = follower
+    follower.prev = newNode
+    this.length++
+  }
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
   printList() {
     const array = [];
     let current = this.head;
@@ -44,10 +68,10 @@ class DoublyLinkedList {
 
 const doublyLinked = new DoublyLinkedList(20);
 doublyLinked.append(3);
-doublyLinked.printList()
 
 doublyLinked.append(15);
-doublyLinked.printList()
 
 doublyLinked.prepend(1);
+
+doublyLinked.insert(2,99)
 doublyLinked.printList()
