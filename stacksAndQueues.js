@@ -34,6 +34,10 @@ class Stack {
     if (!this.top) {
         return null
     }
+    if (this.top === this.bottom) {
+        this.bottom = null
+    }
+    // stored the former this.top just in case you would like to use again
     const pointer = this.top
     this.top = this.top.next
     this.length--
@@ -44,7 +48,7 @@ const myStack = new Stack();
 myStack.push('Google')
 myStack.push('Udemy')
 myStack.push("Discord");
-console.log(myStack.pop())
+myStack.pop()
 
 //Queues
 // FIFO
