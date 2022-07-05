@@ -25,31 +25,42 @@ class Stack {
     } else {
       const pointer = this.top;
       this.top = newNode;
-      this.top.next = pointer
+      this.top.next = pointer;
     }
     this.length++;
     console.log(this);
   }
   pop() {
     if (!this.top) {
-        return null
+      return null;
     }
     if (this.top === this.bottom) {
-        this.bottom = null
+      this.bottom = null;
     }
     // stored the former this.top just in case you would like to use again
-    const pointer = this.top
-    this.top = this.top.next
-    this.length--
-    return this
+    const pointer = this.top;
+    this.top = this.top.next;
+    this.length--;
+    return this;
   }
 }
-const myStack = new Stack();
-myStack.push('Google')
-myStack.push('Udemy')
-myStack.push("Discord");
-myStack.pop()
+// const myStack = new Stack();
+// myStack.push('Google')
+// myStack.push('Udemy')
+// myStack.push("Discord");
+// myStack.pop()
 
 //Queues
 // FIFO
 // building with inked lists
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.length = 0;
+  }
+  peek() {}
+  enqueue(value) {}
+  dequeue() {}
+}
