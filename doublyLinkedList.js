@@ -17,6 +17,7 @@ class DoublyLinkedList {
   }
   append(value) {
     let newNode = new DoublyNode(value);
+    newNode.prev = this.tail;
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
