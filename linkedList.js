@@ -88,21 +88,21 @@ class LinkedList {
       return this.head;
     }
     // if the linkedlist length is more than 1
-    // storing the head 
-    let first = this.head
-    this.tail = this.head
+    // storing the head
+    let first = this.head;
+    this.tail = this.head;
     // storing the second value
-    let second = first.next
+    let second = first.next;
     // as long there is a second value to continue reversing
     while (second) {
-      const temp = second.next
-      second.next = first
-      first = second
-      second = temp
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
     }
-    this.head.next = null
-    this.head = first
-  return this.printList()
+    this.head.next = null;
+    this.head = first;
+    return this.printList();
   }
 }
 
@@ -118,3 +118,5 @@ myLinkedList.insert(2, 99);
 myLinkedList.remove(1);
 
 myLinkedList.reverse();
+
+export default Node;
