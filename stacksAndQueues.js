@@ -60,7 +60,31 @@ class Queue {
     this.last = null;
     this.length = 0;
   }
-  peek() {}
-  enqueue(value) {}
-  dequeue() {}
+  peek() {
+    // get first item
+    return console.log(this.first);
+  }
+  enqueue(value) {
+    // add
+    const newNode = new Node(value)
+    if (this.length === 0) {
+        this.first = newNode;
+        this.last = newNode
+    } else {
+        this.last.next = newNode;
+        this.last = newNode
+    }
+    this.length++
+    return console.log(this)
+  }
+  dequeue() {
+    // remove from the beginning of the stack
+
+  }
 }
+
+const myQueue = new Queue() 
+myQueue.enqueue("Joy")
+myQueue.enqueue("Matt")
+myQueue.enqueue("Pavel")
+myQueue.enqueue("Samir")
