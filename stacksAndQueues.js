@@ -66,25 +66,35 @@ class Queue {
   }
   enqueue(value) {
     // add
-    const newNode = new Node(value)
+    const newNode = new Node(value);
     if (this.length === 0) {
-        this.first = newNode;
-        this.last = newNode
+      this.first = newNode;
+      this.last = newNode;
     } else {
-        this.last.next = newNode;
-        this.last = newNode
+      this.last.next = newNode;
+      this.last = newNode;
     }
-    this.length++
-    return console.log(this)
+    this.length++;
+    return console.log(this);
   }
   dequeue() {
     // remove from the beginning of the stack
-
+    if (!this.first) {
+      return null;
+    }
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    // who ever is after the first is now first
+    this.first = this.first.next
+    this.length--
+    return console.log(this)
   }
 }
 
-const myQueue = new Queue() 
-myQueue.enqueue("Joy")
-myQueue.enqueue("Matt")
-myQueue.enqueue("Pavel")
-myQueue.enqueue("Samir")
+const myQueue = new Queue();
+myQueue.enqueue("Joy");
+myQueue.enqueue("Matt");
+myQueue.enqueue("Pavel");
+myQueue.enqueue("Samir");
+myQueue.dequeue()
