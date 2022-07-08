@@ -86,9 +86,9 @@ class Queue {
       this.last = null;
     }
     // who ever is after the first is now first
-    this.first = this.first.next
-    this.length--
-    return console.log(this)
+    this.first = this.first.next;
+    this.length--;
+    return console.log(this);
   }
 }
 
@@ -97,4 +97,4 @@ myQueue.enqueue("Joy");
 myQueue.enqueue("Matt");
 myQueue.enqueue("Pavel");
 myQueue.enqueue("Samir");
-myQueue.dequeue()
+myQueue.dequeue();
