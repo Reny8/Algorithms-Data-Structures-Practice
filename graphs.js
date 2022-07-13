@@ -13,8 +13,8 @@ const adjacentGraph = [[2], [2, 3], [0, 1, 3], [1, 2]];
 // ADJACENT MATRIX]
 // first index is connected with the values 1 index positions
 const adjacentMatrixGraph = [
-  [0, 0, 1, 0],
-  [0, 0, 1, 1],
-  [1, 1, 0, 1],
-  [0, 1, 1, 0],
+  { 0: [0, 0, 1, 0] },
+  { 1: [0, 0, 1, 1] },
+  { 2: [1, 1, 0, 1] },
+  { 3: [0, 1, 1, 0] },
 ];
