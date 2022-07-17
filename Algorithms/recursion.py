@@ -49,11 +49,15 @@ def fibo(n):
     numbers[n] = fibo(n - 1) + fibo(n - 2)  # Recursive case
     return numbers[n]
 
-result = [fibo(n) for n in range(2)]
-print(result)
+# result = [fibo(n) for n in range(2)]
+# print(result)
 
 # FIBONACCI USING ITERATION
 def fibonacci_iterative(n):
-    pass
+    numbers = [0,1]
+    for num in range(2, n +1):
+        numbers.append(numbers[num -2] + numbers[num -1])
+    return numbers[n]
 
-# fibonacci_iterative(8)
+# result = [fibonacci_iterative(n) for n in range(10)]
+# print(result)
