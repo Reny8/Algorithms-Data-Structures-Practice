@@ -61,3 +61,16 @@ def fibonacci_iterative(n):
 
 # result = [fibonacci_iterative(n) for n in range(10)]
 # print(result)
+
+# REVERSE A STRING WITH RECURSION
+def reverse_string_recursive(string):
+    try:
+        if len(string) == 0:
+            return string
+        
+    except TypeError:
+        return reverse_string_recursive(string[1:]) + string[0]
+
+
+test = reverse_string_recursive("HelloWorld")
+print(test)
