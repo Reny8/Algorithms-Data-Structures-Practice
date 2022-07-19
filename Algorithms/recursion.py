@@ -64,12 +64,10 @@ def fibonacci_iterative(n):
 
 # REVERSE A STRING WITH RECURSION
 def reverse_string_recursive(string):
-    try:
-        if len(string) == 0:
-            return string
+    if len(string) == 0:
+        return string
+    return reverse_string_recursive(string[1:]) + string[0]
         
-    except TypeError:
-        return reverse_string_recursive(string[1:]) + string[0]
 
 
 test = reverse_string_recursive("HelloWorld")
