@@ -1,14 +1,22 @@
 WHICH TYPE OF SORTING IS BEST TO USE IN THESE CASE SCENARIOS?
 #1 - Sort 10 schools around your house by distance:
+Insertion Sort: really fast on small inputs and easy to use
 
 #2 - eBay sorts listings by the current Bid amount:
+Radix or Counting Sort: numbers that need to be sorted with a fixed length of numbers
 
 #3 - Sport scores on ESPN
+Quick Sort: most efficient thant merge for a case like this
 
 #4 - Massive database (can't fit all into memory) needs to sort through past year's user data
+Merge Sort: not sorting in memory for the massive database. Better performance
 
 #5 - Almost sorted Udemy review data needs to update and add 2 new reviews
+Insertion Sort: even though there might be a lot of data. Most of the previous data is likely sorted. 
 
 #6 - Temperature Records for the past 50 years in Canada
+Radix or Counting Sort if the temps do not have decimal places. 
+If there are decimal places than Quick Sort for in memory sorting saving on space complexity
 
 #7 - Large user name database needs to be sorted. Data is very random.
+Merge Sort: if there is enough memory or Quick Sort is not worried about worse case
