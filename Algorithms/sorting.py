@@ -46,5 +46,44 @@ def merge(left, right):
     output.extend(left[i:])
     output.extend(right[j:])
     return output
-sorted = merge_sort(numbers)
-print(sorted)
+# sorted = merge_sort(numbers)
+# print(sorted)
+
+# QUICK SORT PRACTICE
+def quick_sort(list):
+    elements = len(list)
+    
+    #Base case
+    if elements < 2:
+        return list
+
+    #Position of the partitioning element
+    current_position = 0 
+
+    #Partitioning loop
+    for index in range(1, elements): 
+         if list[index] <= list[0]:
+              current_position += 1
+              temp = list[index]
+              list[index] = list[current_position]
+              list[current_position] = temp
+
+    temp = list[0]
+    list[0] = list[current_position] 
+
+    #Brings pivot to it's appropriate position
+    list[current_position] = temp 
+
+    #Sorts the elements to the left of pivot
+    left = quick_sort(list[0:current_position]) 
+    # sorts the elements to the right of pivot
+    right = quick_sort(list[current_position+1:elements])
+
+    #Merging everything together
+    list = left + [list[current_position]] + right 
+    return list
+
+
+
+result = quick_sort(numbers)
+print(result)
