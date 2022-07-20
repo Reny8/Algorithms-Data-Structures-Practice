@@ -171,8 +171,17 @@ function traverseInorder(node, list) {
   }
   return list;
 }
+function traversePreorder(node, list) {
+  list.push(node.value);
+  if (node.left) {
+    traversePreorder(node.left, list);
+  }
+  if (node.right) {
+    traversePreorder(node.right, list);
+  }
+  return list;
+}
 function traversePostorder(node, list) {}
-function traversePreorder(node, list) {}
 const tree = new BinarySearchTree();
 tree.insert(9);
 tree.insert(6);
@@ -181,4 +190,5 @@ tree.insert(1);
 tree.insert(4);
 tree.insert(34);
 tree.insert(45);
-console.log(tree.DFSInorder())
+console.log(`INORDER: ${tree.DFSInorder()}`);
+console.log(`PREORDER: ${tree.DFSPreorder()}`)
