@@ -136,21 +136,43 @@ class BinarySearchTree {
     let currentNode = this.root;
     let list = [];
     let queue = [];
-    queue.push(currentNode)
-    while( queue.length > 0){
+    queue.push(currentNode);
+    while (queue.length > 0) {
       // SHIFT MEANS WE TAKE THE FIRST ITEM IN THE QUEUE
-      currentNode = queue.shift()
-      list.push(currentNode.value)
+      currentNode = queue.shift();
+      list.push(currentNode.value);
       if (currentNode.left) {
-        queue.push(currentNode.left)
+        queue.push(currentNode.left);
       }
       if (currentNode.right) {
-        queue.push(currentNode.right)
+        queue.push(currentNode.right);
       }
     }
-  return list
+    return list;
+  }
+  DFSInorder() {
+    return traverseInorder(this.root, []);
+  }
+  DFSPostorder() {
+    return traversePostorder(this.root, []);
+  }
+  DFSPreorder() {
+    return traversePreorder(this.root, []);
   }
 }
+
+function traverseInorder(node, list) {
+  if (node.left) {
+    traverseInorder(node.left, list);
+  }
+  list.push(node.value);
+  if (node.right) {
+    traverseInorder(node.right, list);
+  }
+  return list;
+}
+function traversePostorder(node, list) {}
+function traversePreorder(node, list) {}
 const tree = new BinarySearchTree();
 tree.insert(9);
 tree.insert(6);
@@ -159,11 +181,4 @@ tree.insert(1);
 tree.insert(4);
 tree.insert(34);
 tree.insert(45);
-console.log(tree.breadthFirstSearch())
-
-function traverse(node) {
-  const tree = { value: node.value };
-  tree.left = node.left === null ? null : traverse(node.left);
-  tree.right = node.right === null ? null : traverse(node.right);
-  return tree;
-}
+console.log(tree.DFSInorder())
