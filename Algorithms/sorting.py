@@ -83,7 +83,5 @@ def quick_sort(list):
     list = left + [list[current_position]] + right 
     return list
 
-
-
-result = quick_sort(numbers)
-print(result)
+# result = quick_sort(numbers)
+# print(result)
