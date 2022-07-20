@@ -181,14 +181,24 @@ function traversePreorder(node, list) {
   }
   return list;
 }
-function traversePostorder(node, list) {}
+function traversePostorder(node, list) {
+  if (node.left) {
+    traversePostorder(node.left, list)
+  }
+  if (node.right) {
+    traversePostorder(node.right, list)
+  }
+  list.push(node.value)
+  return list
+}
 const tree = new BinarySearchTree();
 tree.insert(9);
-tree.insert(6);
-tree.insert(12);
-tree.insert(1);
 tree.insert(4);
-tree.insert(34);
-tree.insert(45);
+tree.insert(20);
+tree.insert(1);
+tree.insert(6);
+tree.insert(15);
+tree.insert(170);
 console.log(`INORDER: ${tree.DFSInorder()}`);
 console.log(`PREORDER: ${tree.DFSPreorder()}`)
+console.log(`POSTORDER: ${tree.DFSPostorder()}`)
