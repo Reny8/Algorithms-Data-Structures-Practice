@@ -42,15 +42,15 @@ def recurringNumber(array):
 # print(repeat)
 
 # FIBONACCI USING RECURSION
-def fibo(n):
-    numbers = {0:0,1:1}
-    if n in numbers:  # Base case
-        return numbers[n]
-    numbers[n] = fibo(n - 1) + fibo(n - 2)  # Recursive case
-    return numbers[n]
+def fibo(n, dict):
+    if n in dict:  # Base case
+        return dict[n]
+    dict[n] = fibo(n - 1, dict) + fibo(n - 2, dict)  # Recursive case
+    return dict[n]
 
-# result = [fibo(n) for n in range(2)]
-# print(result)
+numbers = {0:0,1:1}
+result = fibo(10, numbers)
+print(result)
 
 # FIBONACCI USING ITERATION
 def fibonacci_iterative(n):
@@ -70,5 +70,5 @@ def reverse_string_recursive(string):
         
 
 
-test = reverse_string_recursive("HelloWorld")
-print(test)
+# test = reverse_string_recursive("HelloWorld")
+# print(test)
