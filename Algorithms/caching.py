@@ -1,10 +1,10 @@
-cache = {}
-def add_to_80(n):
-    if n in cache:
-        return cache[n]
+def add_to_80(n, dict):
+    if n in dict:
+        return dict[n]
     else:
-        cache[n] = n + 80
-        return cache[n]
+        dict[n] = n + 80
+        return dict[n]
 
-result = add_to_80(5)
+cache = {}
+result = add_to_80(5, cache)
 print(result)
